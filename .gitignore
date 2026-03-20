@@ -1,5 +1,5 @@
 BuscaFast/BuscaFast/settings_db.py
-BuscaFast/BuscaFast/tw_id_secret.py
+BuscaFast/BuscaFast/api_keys.py
 *.log
 *.pot
 *.pyc
