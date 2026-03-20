@@ -1,3 +1,6 @@
+# Arquivo de exemplo de configuração do database
+# Copie este arquivo para settings_db.py e preencha com seus dados reais
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -8,5 +11,3 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-
-# Preencha essas informacoes para rodar o MySQL, tire o exemple do nome e importe
