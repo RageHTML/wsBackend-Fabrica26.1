@@ -1,5 +1,5 @@
 from pathlib import Path
-from api_keys import SECRET_KEY
+from api_keys import SECRET_KEY # importando a chave secreta do djungle em api_key_exemmple voce encontra mais detalhe
 try: # Importando as configuracao do DB em settings_db_exemple voce encotra mais detalhes
     from .settings_db import DATABASES 
 except ImportError:
