@@ -1,4 +1,8 @@
 from pathlib import Path
+try:
+    from .settings_db import DATABASES # Abra o arquivo settings_db_exemple 
+except ImportError:
+    DATABASES = {}  # Retorna uma tabela vazia
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -45,13 +49,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'BuscaFast.wsgi.application'
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
