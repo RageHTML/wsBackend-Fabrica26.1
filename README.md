@@ -1,0 +1,1 @@
+## API UTILIZADA: https://gamebrain.co/api
