@@ -2,7 +2,7 @@ from pathlib import Path
 try:
     from .settings_db import DATABASES # Abra o arquivo settings_db_exemple 
 except ImportError:
-     print("⚠️ Crie um settings_db.py a partir do settings_db_exemple.py")
+    print("⚠️ Crie um settings_db.py a partir do settings_db_exemple.py")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'games',
 ]
 
 MIDDLEWARE = [
