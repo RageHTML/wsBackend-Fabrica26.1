@@ -2,7 +2,7 @@ from pathlib import Path
 try:
     from .settings_db import DATABASES # Abra o arquivo settings_db_exemple 
 except ImportError:
-    DATABASES = {}  # Retorna uma tabela vazia
+     print("⚠️ Crie um settings_db.py a partir do settings_db_exemple.py")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
