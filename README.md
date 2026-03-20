@@ -1,1 +1,1 @@
-## API UTILIZADA: https://gamebrain.co/api
+## API UTILIZADA: https://api-docs.igdb.com/
