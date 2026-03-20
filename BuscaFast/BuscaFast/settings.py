@@ -1,12 +1,13 @@
 from pathlib import Path
-try:
-    from .settings_db import DATABASES # Abra o arquivo settings_db_exemple 
+from api_keys import SECRET_KEY
+try: # Importando as configuracao do DB em settings_db_exemple voce encotra mais detalhes
+    from .settings_db import DATABASES 
 except ImportError:
     print("⚠️ Crie um settings_db.py a partir do settings_db_exemple.py")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-+osq+udsnjm36f^0l9ur9%ou15m=z2x*kk^#a0*_-*pjoul3*('
+SECRET_KEY = SECRET_KEY
 
 DEBUG = True
 
