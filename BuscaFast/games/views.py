@@ -13,9 +13,9 @@ def save_from_api(igdb_id,name): # salvar jogos da api no db Game, sempre que al
     game,created = Game.objects.update_or_create(
         igdb_id=igdb_id, #id do jogo 
         defaults={ # dados do jogo 
-            "name:": game_data["name"], # pega o nome
-            "rating:": game_data["rating"], # pega a nota
-            "cover_url:": game_data["cover_url"] # pega a imagem
+            "name": game_data["name"], # pega o nome
+            "rating": game_data.get("rating"), # pega a nota
+            "cover_url": game_data.get("cover_url") # pega a imagem
         }
     )
     return game
@@ -28,9 +28,9 @@ def search_page(request):
     query = query.replace("'",'') # removendo aspas simples
     results = "none" # definindo a variavel vazia por padrao
     if query:
-        data = get_game_by_name(query) # salva a tabela do jogo pesquisado da api  
+        data = get_game_by_name(query) # buscar jogo na api  
         results = [] # cria uma tabela para guardar o resultado
-        for item in data: # iterando dentro da data para salvar o bd
+        for item in data: # iterando dentro da data para acessar os items
             game = save_from_api(item["id"],item["name"]) # retorna os dados depois de armazena na db
             if game:
                 results.append(game) # adicionando na lista results
