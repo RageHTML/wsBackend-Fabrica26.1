@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h1>Buscar Jogos</h1>
+        <title>BuscaFast</title>
     </head>
     <body>
-
+        <h1>Buscar Jogos</h1>
+        <form method="GET" action="{% url 'search_page'%}"> <!-- Usando o metodo de Busca GET, Action envia os dados pegando a url associando o nome  -->
+            <input 
+                type="text"
+                id="game_name"
+                name="game_name"
+                maxlength="80"
+                placeholder="Digite o nome do jogo"
+                required 
+            > <!-- Definindo o campo de busca, maxlength e o tamanho maximo de caracteres-->
+        </form> 
+        <button type="submit">Buscar</button> <!-- enviando para a url definida -->
     </body>
 </html>
