@@ -1,5 +1,5 @@
 from pathlib import Path
-from api_keys import SECRET_KEY # importando a chave secreta do djungle em api_key_exemmple voce encontra mais detalhe
+from BuscaFast.api_keys import SECRET_KEY # importando a chave secreta do djungle em api_key_exemmple voce encontra mais detalhe
 try: # Importando as configuracao do DB em settings_db_exemple voce encotra mais detalhes
     from .settings_db import DATABASES 
 except ImportError:
@@ -7,7 +7,7 @@ except ImportError:
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = SECRET_KEY
+SECRET_KEY
 
 DEBUG = True
 
