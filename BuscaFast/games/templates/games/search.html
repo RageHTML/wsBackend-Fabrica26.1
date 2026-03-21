@@ -13,8 +13,20 @@
                 maxlength="80"
                 placeholder="Digite o nome do jogo"
                 required 
-            > <!-- Definindo o campo de busca, maxlength e o tamanho maximo de caracteres-->
+            > <!-- Definindo o campo de busca, maxlength e o tamanho maximo de caracteres, o id vai ser colocando em views.py-->
         </form> 
         <button type="submit">Buscar</button> <!-- enviando para a url definida -->
+
+
+        <p>Result raw: {{results}}</p>
+        {% if results %}
+            <h2>Resultados para "{{ query }}"</h2>
+            <ul>
+                {% for game in results %}
+                    <li>{{ game.name }} - Nota: {{ game.rating }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
     </body>
 </html>
