@@ -11,7 +11,7 @@ class Game(models.Model): # Avisando ao DB que vou criar uma tabela chamada Game
         return self.name
     
 class UserGameList(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)    # cada lista pertence a um usuário
+    user_token = models.CharField(max_length=100)    # identificador do usario (token)
     games = models.ManyToManyField(Game, blank=True) # lista de jogos, sem duplicantes
     created_at = models.DateTimeField(auto_now_add=True) # data que o jgoo foi favoritado
 
