@@ -13,6 +13,7 @@
                     <img src="{{ game.cover_url }}" alt="{{ game.name }}">
                 {% endif %}
                 {{ game.name }}
+                <a href="{% url 'remove_to_list' %}?game_name={{ game.name }}">Remover</a>
             </div>
             {% endfor %}
         {% else %}
