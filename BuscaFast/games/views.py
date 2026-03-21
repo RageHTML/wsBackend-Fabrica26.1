@@ -26,14 +26,17 @@ def search_page(request):
     query = query.strip() # removendo espacos fim/inicio
     query = query.replace('"','') # removendo aspas duplas
     query = query.replace("'",'') # removendo aspas simples
-    results = "none" # definindo a variavel vazia por padrao
+    results = [] # criando umma tabela vazia para os dados
+
     if query:
-        data = get_game_by_name(query) # buscar jogo na api  
-        results = [] # cria uma tabela para guardar o resultado
-        for item in data: # iterando dentro da data para acessar os items
-            game = save_from_api(item["id"],item["name"]) # retorna os dados depois de armazena na db
-            if game:
-                results.append(game) # adicionando na lista results
+        results = list(Game.objects.filter(name__icontains=query)) # buscar jogo no bd primeiro
+
+        if not results: # se nao encontrar no bd
+            data = get_game_by_name(query) # buscar dados do jogo na api
+            for item in data: # acessando os dados
+                game = save_from_api(item["id"],item["name"]) # salvando no bd
+                if game: 
+                    results.append(game) # adicionando o resultado a resutls
 
 
     return render(request, "games/search.html", {"results": results,"query": query}) # request e a requisicao, games/search.html e o template passando o contexto {query,results}
