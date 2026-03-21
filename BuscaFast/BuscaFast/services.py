@@ -23,10 +23,16 @@ def get_game_by_name(name): # buscar dados de um jogo pelo o nome
         "Authorization": f"Bearer {token}" # prova que voce esta autheticado
     }
 
-    body = f'fields id,name,rating; search"{name}"; limit 1;' # Query de busca (tipo GraphQL), # fields sao os dados que eu quero, search e onde o parametro vai ser inserido, limit traz apenas 1 dado 
-
+    body = f'fields id,name,rating, cover.image_id; search"{name}"; limit 1;' # Query de busca (tipo GraphQL), # fields sao os dados que eu quero, search e onde o parametro vai ser inserido, limit traz apenas 1 dado 
+    
     response = requests.post(url,headers=headers, data=body.encode('utf-8')) # metodo post (apontando para o caminho url, passando o headers, body)
+    data = response.json() # converte a resposta da api (dict/list)
 
-    return response.json() # converte a resposta da api (dict/list)
+    for game in data: # montar a url da imagem
+        if "cover" in game:
+            image_id = game["cover"]["image_id"]
+            game["cover_url"] = f"https://images.igdb.com/igdb/image/upload/t_cover_big/{image_id}.jpg"
+    
+    return data # adiciona a url ja gerada para data
 
 
