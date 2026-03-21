@@ -3,7 +3,7 @@ from BuscaFast.services import get_game_by_name
 
 def search_page(request):
     # lidando com dados invalidos 
-    query = request.GET.get("game_name","") # coloca o id do form, para nao ter problemas...
+    query = request.GET.get("game_name","") # coloca o id do form de search.html, para nao ter problemas...
     query = query.strip() # removendo espacos fim/inicio
     query = query.replace('"','') # removendo aspas duplas
     query = query.replace("'",'') # removendo aspas simples
