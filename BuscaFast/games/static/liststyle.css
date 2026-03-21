@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #0d0d1a;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #9b59b6;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 8px rgba(155, 89, 182, 0.7);
+}
+
+.voltar-jogos {
+    display: inline-block;
+    background-color: #5865f2;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 14px;
+    font-size: 16px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.voltar-jogos:hover {
+    background-color: #4752c4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+.config-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.cards-jogos {
+    background-color: #1e1e2f;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.cards-jogos:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 24px rgba(155, 89, 182, 0.6);
+    background-color: #292943;
+}
+
+.capa-jogo {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-bottom: 2px solid #9b59b6;
+}
+
+.legendas {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.nome-jogo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.apagar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #a53ce7;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 8px 16px;
+    margin-top: 12px;
+    transition: all 0.3s ease;
+}
+
+.apagar:hover {
+    background-color: #b928cc;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}

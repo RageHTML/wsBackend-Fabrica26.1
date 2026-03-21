@@ -1,44 +1,40 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>BuscaFast</title>
-    </head>
-    <body>
-        <h1>Buscar Jogos</h1>
-        <form method="GET" action="{% url 'search_page'%}"> <!-- Usando o metodo de Busca GET, Action envia os dados pegando a url associando o nome  -->
-            <input 
-                type="text"
-                id="game_name"
-                name="game_name"
-                maxlength="80"
-                placeholder="Digite o nome do jogo"
-                required 
-            > <!-- Definindo o campo de busca, maxlength e o tamanho maximo de caracteres, o id vai ser colocando em views.py-->
-        </form> 
-        <button type="submit">Buscar</button> <!-- enviando para a url definida -->
+<head>
+    <title>BuscaFast</title>
+    <link rel="stylesheet" href="{% static 'searchstyle.css' %}">
+</head>
+<body>
+    <div class="titulo">Buscar Jogos 🔍</div>
 
+    <form method="GET" action="{% url 'search_page' %}" class="campo-de-busca">
+        <input type="text" id="game_name" name="game_name" maxlength="80" placeholder="Digite o nome do jogo" required>
+        <button type="submit">Buscar</button>
+    </form>
 
-        <p>Result raw: {{results}}</p> <!-- So um debug para eu ver como ta a lista -->
-        {% if results %} <!-- quando views retorna o contexto query e results -->
-            <h2>Resultados para "{{ query }}"</h2> 
-            <ul>
-                {% for game in results %} <!-- Iterando na lista que o contexto retorna-->
-                    <li>
-                        {% if game.cover_url%} <!-- se na lista(results) achar cover_url-->
-                            <img src="{{ game.cover_url }}" alt="{{ game.name }}" style="width:100px; height:auto;">
-                        {% endif %}
-                        <strong>{{ game.name }}</strong> - Nota: {{ game.rating }}
-
-                        <form method="GET" action="{% url 'add_to_list'%}">
+    <a href="{% url 'list_page' %}" class="ver-lista">Ver minha lista</a>
+    
+    {% if results %}
+        <div class="games-div">
+            {% for game in results %}
+                <div class="card">
+                    {% if game.cover_url %}
+                        <img src="{{ game.cover_url }}" alt="{{ game.name }}" class="capa">
+                    {% endif %}
+                    <div class="legendas">
+                        <div class="titulo">{{ game.name }}</div>
+                        <div class="nota">Nota: {{ game.rating|default:"-" }}</div>
+                        <form method="GET" action="{% url 'add_to_list' %}">
                             <input type="hidden" name="game_name" value="{{ game.name }}">
-                            <button type="submit">Adicionar à lista</button>
+                            <button type="submit" class="adicionar">Adicionar</button>
                         </form>
-                    </li>
-                {% endfor %}
-            </ul>
-        {% else %} <!-- caso nao encontre nenhum jogo ou outro erro-->
-            <p>Nenhum Jogo encontrado para "{{ query }}"</p>
-        {% endif %}
-
-    </body>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Nenhum Jogo encontrado para "{{ query }}"</p>
+    {% endif %}
+</body>
 </html>

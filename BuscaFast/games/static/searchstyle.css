@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #0d0d1a;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #9b59b6;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 8px rgba(155, 89, 182, 0.7);
+}
+
+.campo-de-busca {
+    width: 100%;
+    max-width: 720px;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.campo-de-busca input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 16px;
+    border-radius: 12px 0 0 12px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    background-color: #1e1e2f;
+    color: #fff;
+}
+
+.campo-de-busca button {
+    padding: 12px 20px;
+    border-radius: 0 12px 12px 0;
+    border: none;
+    background-color: #5865f2;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.campo-de-busca button:hover {
+    background-color: #4752c4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.ver-lista {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 18px;
+    background-color: #9b59b6;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.ver-lista:hover {
+    background-color: #7d3c98;
+    transform: translateY(-2px);
+}
+
+.games-div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Card de resultado */
+.card {
+    background-color: #1e1e2f;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 24px rgba(155, 89, 182, 0.6);
+    background-color: #292943;
+}
+
+.capa {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 2px solid #9b59b6;
+}
+
+.legendas {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.titulo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nota {
+    font-size: 14px;
+    color: #b0b0c0;
+    margin-bottom: 12px;
+}
+
+.adicionar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #43b581;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+}
+
+.adicionar:hover {
+    background-color: #369768;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
