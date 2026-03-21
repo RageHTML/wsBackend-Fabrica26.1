@@ -10,9 +10,9 @@ def get_twitch_token(): # funcao para buscar o token
         "grant_type": "client_credentials" # tipo de authenticacao 
     }
 
-    response = requests.post(url, data=params) # enviando para a url, os params pelo o metodo post 
-
-    return response.json()
+    response = requests.post(url, params=params) # enviando para a url, os params pelo o metodo post 
+    data = response.json() # armazenando o json em uma variavel para acessar 
+    return data["access_token"] # retorna apenas o access token
 
 def get_game_by_name(name): # buscar dados de um jogo pelo o nome
     token = get_twitch_token() # usar o token de auth na igbd
