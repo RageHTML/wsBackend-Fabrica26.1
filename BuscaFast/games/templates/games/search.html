@@ -31,6 +31,8 @@
                     </li>
                 {% endfor %}
             </ul>
+        {% else %} <!-- caso nao encontre nenhum jogo ou outro erro-->
+            <p>Nenhum Jogo encontrado para "{{ query }}"</p>
         {% endif %}
 
     </body>
