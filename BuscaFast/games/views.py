@@ -42,12 +42,9 @@ def search_page(request):
 
     return render(request, "games/search.html", {"results": results,"query": query}) # request e a requisicao, games/search.html e o template passando o contexto {query,results}
 
-def get_token(request): # Verificar o token ou gerar para o usuario
+def list_page(request):
     token = request.session.get("user_token") # verificar se o usuario ja tem token
     if not token:
         token = str(uuid.uuid4())
         request.session["user_token"] = token
-    return token 
-def list_page(request):
-
-    return render(request, "games/list.html")
+    return render(request, "games/list.html", {"user_token": token})
