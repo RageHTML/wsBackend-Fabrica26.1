@@ -28,6 +28,11 @@
                             <img src="{{ game.cover_url }}" alt="{{ game.name }}" style="width:100px; height:auto;">
                         {% endif %}
                         <strong>{{ game.name }}</strong> - Nota: {{ game.rating }}
+
+                        <form method="GET" action="{% url 'add_to_list'%}">
+                            <input type="hidden" name="game_name" value="{{ game.name }}">
+                            <button type="submit">Adicionar à lista</button>
+                        </form>
                     </li>
                 {% endfor %}
             </ul>

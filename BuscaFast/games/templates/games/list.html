@@ -6,5 +6,17 @@
     <body>
         <h1>Seus Jogos Favoritados</h1>
         <p>Token do usuário: {{ user_token }}</p>
+        {% if games %}
+            {% for game in games %}
+            <div class="game">
+                {% if game.cover_url %}
+                    <img src="{{ game.cover_url }}" alt="{{ game.name }}">
+                {% endif %}
+                {{ game.name }}
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>Você ainda não adicionou nenhum jogo.</p>
+        {% endif %}
     </body>
 </html>
