@@ -44,7 +44,7 @@ def search_page(request):
 
 def list_page(request):
     token = request.session.get("user_token") # verificar se o usuario ja tem token
-    if not token:
+    if not token: # gerar um token para o novo usuario
         token = str(uuid.uuid4())
         request.session["user_token"] = token
     return render(request, "games/list.html", {"user_token": token})
