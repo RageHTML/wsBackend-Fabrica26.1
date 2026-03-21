@@ -18,12 +18,17 @@
         <button type="submit">Buscar</button> <!-- enviando para a url definida -->
 
 
-        <p>Result raw: {{results}}</p>
-        {% if results %}
-            <h2>Resultados para "{{ query }}"</h2>
+        <p>Result raw: {{results}}</p> <!-- So um debug para eu ver como ta a lista -->
+        {% if results %} <!-- quando views retorna o contexto query e results -->
+            <h2>Resultados para "{{ query }}"</h2> 
             <ul>
-                {% for game in results %}
-                    <li>{{ game.name }} - Nota: {{ game.rating }}</li>
+                {% for game in results %} <!-- Iterando na lista que o contexto retorna-->
+                    <li>
+                        {% if game.cover_url%} <!-- se na lista(results) achar cover_url-->
+                            <img src="{{ game.cover_url }}" alt="{{ game.name }}" style="width:100px; height:auto;">
+                        {% endif %}
+                        <strong>{{ game.name }}</strong> - Nota: {{ game.rating }}
+                    </li>
                 {% endfor %}
             </ul>
         {% endif %}
