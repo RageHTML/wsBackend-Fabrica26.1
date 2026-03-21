@@ -67,6 +67,25 @@ def add_to_list(request): # adiciona Jogo a lista
 
     return redirect("list_page")
 
+def remove_to_list(request):
+    token = get_token(request)  # pega o token único do usuário
+    game_name = request.GET.get("game_name") # pega o nome do jogo 
+    game = Game.objects.filter(name=game_name).first() # procurando no bd(Game) pelo game_name
+
+    if not game and game_name:
+        data = get_game_by_name(game_name) # Busca na api em services
+        if data: 
+            api_game = data[0] 
+            game = save_from_api(api_game["id"],api_game["name"]) # salvar no bd(Game)
+
+    if game:
+        user_list, created = UserGameList.objects.get_or_create(user_token=token) # retorna uma tupla(user_list,created)
+
+    if user_list.games.filter(id=game.id).exists(): # verifica se o usario tem uma lista 
+        user_list.games.remove(game) # remove o jogo da lista 
+
+    return redirect("list_page")
+
  
 def list_page(request):
     token = get_token(request) # obter token 
