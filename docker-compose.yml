@@ -6,7 +6,7 @@ services:
     volumes:
       - .:/app
     ports:
-      - "8001:8000"
+      - "8001:8000" # a porta do servidor 
     depends_on:
       - db
 
@@ -15,9 +15,9 @@ services:
     container_name: mysql_db
     restart: always
     environment:
-      MYSQL_DATABASE: nome_do_seu_db
-      MYSQL_USER: seu_user 
-      MYSQL_PASSWORD: sua_senha
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: nome_do_seu_db # nome do seu banco de dados MySQL
+      MYSQL_USER: seu_user  # nome do seu User Mysql
+      MYSQL_PASSWORD: sua_senha # a senha do banco de dado MySQL
+      MYSQL_ROOT_PASSWORD: root # deixe root
     ports:
-      - "3306:3306"
+      - "3306:3306" # A mesma porta de settings_db 
