@@ -61,11 +61,24 @@ O servidor já estará rodando.
 
 Com o servidor rodando, acesse no navegador:
 
-http://localhost:8001 // a porta e definida em ``docker-compose.yml`` 
+http://localhost:8001  
+> A porta é definida no `docker-compose.yml`
 
-Para acessar o painel de busca de jogos:
+### 🔎 Buscar jogos
+
+Acesse:
 
 http://localhost:8001/games/buscar_jogos/
+
+Nessa página você pode:
+
+- Buscar jogos pelo nome
+- Visualizar os resultados retornados da API
+- Adicionar jogos à sua lista
+
+---
+
+## 🎥 Demonstração
 
 ![Demo](docs/demo.gif)
 
