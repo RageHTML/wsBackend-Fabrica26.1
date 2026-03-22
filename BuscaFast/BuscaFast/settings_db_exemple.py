@@ -1,5 +1,4 @@
 # Arquivo de exemplo de configuração do database
-# Copie este arquivo para settings_db.py e preencha com seus dados reais
 
 DATABASES = {
     'default': {
