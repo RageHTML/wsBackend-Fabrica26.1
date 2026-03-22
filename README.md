@@ -89,6 +89,7 @@ Nessa página você pode:
 - Visualizar os jogos que você adicionou
 - Remover jogos da sua lista
 
+--- 
 ## 🎥 Demonstração
 
 ![Demo](docs/demo2.gif)
