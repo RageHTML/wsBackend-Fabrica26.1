@@ -15,9 +15,9 @@ services:
     container_name: mysql_db
     restart: always
     environment:
-      MYSQL_DATABASE: buscafast_db
-      MYSQL_USER: RageJS 
-      MYSQL_PASSWORD: EgarsJ789
+      MYSQL_DATABASE: nome_do_seu_db
+      MYSQL_USER: seu_user 
+      MYSQL_PASSWORD: sua_senha
       MYSQL_ROOT_PASSWORD: root
     ports:
       - "3306:3306"
