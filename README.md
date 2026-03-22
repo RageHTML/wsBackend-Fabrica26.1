@@ -38,10 +38,9 @@ Você precisa configurar o banco de dados `settings_db_exemple.py` antes de roda
 Você precisa configurar `api_keys_exemple.py` depois
 
 1. Renomeie o arquivo: `api_keys.py`
-2. Acesse o link https://api-docs.igdb.com/#account-creation
-3. Gere um Django SECRET_KEY 
+2. client_id, client_secret acesse: https://api-docs.igdb.com/#account-creation
 
-Com a venv ativada execute:
+3. Gere um Django SECRET_KEY  Com a venv ativada execute:
 
 ```bash
 python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
