@@ -41,6 +41,12 @@ Você precisa configurar `api_keys_exemple.py` depois
 2. Acesse o link https://api-docs.igdb.com/#account-creation
 3. Gere um Django SECRET_KEY 
 
+Com a venv ativada execute:
+
+```bash
+python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+```
+
 Você precisa configurar `docker-compose.yml`:
 1. Preencha igual o arquivo informa 
 
