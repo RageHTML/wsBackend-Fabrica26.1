@@ -30,12 +30,12 @@ venv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
------
+---
 Você precisa configurar o banco de dados `settings_db_exemple.py` antes de rodar o projeto.
 
 1. Renomeie o arquivo: `settings_db.py`
 2. Preencha as informacoes como o arquivo informa
-
+---
 Você precisa configurar `api_keys_exemple.py` depois
 
 1. Renomeie o arquivo: `api_keys.py`
@@ -46,6 +46,8 @@ Você precisa configurar `api_keys_exemple.py` depois
 ```bash
 python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 ```
+
+---
 
 Você precisa configurar `docker-compose.yml`:
 1. Preencha igual o arquivo informa 
@@ -58,13 +60,7 @@ docker compose up --build
 
 O servidor já estará rodando.
 
-## 🧪 Testando a aplicação
-
-Com o servidor rodando, acesse no navegador:
-
-http://localhost:8001  
-> A porta é definida no `docker-compose.yml`
-
+---
 ### 🔎 Buscar jogos
 
 Acesse:
@@ -78,7 +74,6 @@ Nessa página você pode:
 - Adicionar jogos à sua lista
 
 ---
-
 ## 🎥 Demonstração
 
 ![Demo](docs/demo.gif)
