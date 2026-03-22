@@ -9,6 +9,7 @@ Crie uma virtualenv:
 ```bash
 python -m venv venv
 ```
+--- 
 
 Ative a virtualenv:
 
@@ -23,13 +24,13 @@ Windows:
 ```bash
 venv\Scripts\activate
 ```
-
+---
 3. Instale as dependências:
 
 ```bash
 pip install -r requirements.txt
 ```
-
+-----
 Você precisa configurar o banco de dados `settings_db_exemple.py` antes de rodar o projeto.
 
 1. Renomeie o arquivo: `settings_db.py`
