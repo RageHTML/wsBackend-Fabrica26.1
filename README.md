@@ -96,9 +96,9 @@ Nessa página você pode:
 
 ## Features
 
-1.Buscar jogos pelo nome.
-2.Visualizar resultados completos da API (descrição, imagens, avaliações).
-3.Adicionar jogos à sua lista pessoal.
+- 1.Buscar jogos pelo nome.
+- 2.Visualizar resultados completos da API (descrição, imagens, avaliações).
+- 3.Adicionar jogos à sua lista pessoal.
 
 ## Contributing
 
