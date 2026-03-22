@@ -55,6 +55,20 @@ Após configurar tudo, execute:
 docker compose up --build
 ```
 
+O servidor já estará rodando.
+
+## 🧪 Testando a aplicação
+
+Com o servidor rodando, acesse no navegador:
+
+http://localhost:8001 // a porta e definida em ``docker-compose.yml`` 
+
+Para acessar o painel de busca de jogos:
+
+http://localhost:8001/games/buscar_jogos/
+
+![Demo](docs/demo.gif)
+
 
 ## Features
 
