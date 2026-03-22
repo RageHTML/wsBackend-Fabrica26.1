@@ -1,6 +1,6 @@
 # BuscaFast - Salve seus jogos Favoritos
 
-
+BuscaFast é um aplicativo que permite pesquisar, organizar e acompanhar seus jogos favoritos de forma rápida e prática, com informações obtidas diretamente da API do IGDB.
 
 ## Primeiros Passos
 
@@ -96,7 +96,9 @@ Nessa página você pode:
 
 ## Features
 
-
+1.Buscar jogos pelo nome.
+2.Visualizar resultados completos da API (descrição, imagens, avaliações).
+3.Adicionar jogos à sua lista pessoal.
 
 ## Contributing
 
