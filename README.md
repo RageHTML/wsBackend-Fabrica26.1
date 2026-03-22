@@ -18,7 +18,23 @@ Você precisa configurar `api_keys_exemple.py` depois
 Você precisa configurar `docker-compose.yml`:
 1. Preencha igual o arquivo informa 
 
+1. Renomeie o arquivo: `settings_db.py`
+2. Preencha as informacoes como o arquivo informa
 
+Você precisa configurar `api_keys_exemple.py` depois
+
+1. Renomeie o arquivo: `api_keys.py`
+2. Acesse o link https://api-docs.igdb.com/#account-creation
+3. Gere um Django SECRET_KEY 
+
+Você precisa configurar `docker-compose.yml`:
+1. Preencha igual o arquivo informa 
+
+Após configurar tudo, execute:
+
+```bash
+docker compose up --build
+```
 
 
 ## Features
