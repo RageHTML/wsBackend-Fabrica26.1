@@ -78,6 +78,20 @@ Nessa página você pode:
 
 ![Demo](docs/demo.gif)
 
+### 📚 Minha lista
+
+Acesse:
+
+http://localhost:8001/games/minha_lista/
+
+Nessa página você pode:
+
+- Visualizar os jogos que você adicionou
+- Remover jogos da sua lista
+
+## 🎥 Demonstração
+
+![Demo](docs/demo2.gif)
 
 ## Features
 
