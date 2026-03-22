@@ -1,0 +1,23 @@
+services:
+  web:
+    build: .
+    container_name: django_app
+    command: sh wait-for-db.sh
+    volumes:
+      - .:/app
+    ports:
+      - "8001:8000"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: buscafast_db
+      MYSQL_USER: RageJS 
+      MYSQL_PASSWORD: EgarsJ789
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
