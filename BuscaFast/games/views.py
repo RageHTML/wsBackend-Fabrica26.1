@@ -67,7 +67,7 @@ def add_to_list(request): # adiciona Jogo a lista
 
     return redirect("list_page")
 
-def remove_to_list(request):
+def remove_to_list(request): # remover da lis ta
     token = get_token(request)  # pega o token único do usuário
     game_name = request.GET.get("game_name") # pega o nome do jogo 
     game = Game.objects.filter(name=game_name).first() # procurando no bd(Game) pelo game_name
